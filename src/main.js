@@ -17,4 +17,11 @@ document.addEventListener("readystatechange", ()=>{
         check_route()
     }
 })
+window.addEventListener('hashchange', changeHash);
 
+function changeHash(){
+    if(loc.hash == "" || loc.hash == "#"){
+        loc.hash  = "#/"
+     }
+     check_route()
+}
