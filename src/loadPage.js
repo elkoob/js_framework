@@ -17,7 +17,8 @@ if(hash == loc.hash){
 }
 }
 
-function loadPage(pageName = ""){
+function loadPage(pageName){
+    pageName = pageName || "errors/500"
     var xhr = new XMLHttpRequest()
         xhr.onload = function () {
 
@@ -36,7 +37,7 @@ function loadPage(pageName = ""){
             loadPage(pageName)
 		};
 
-		xhr.open('GET', "assets/pages/" + pageName || "errors/500" + ".elkb.html");
+		xhr.open('GET', "assets/pages/" + pageName + ".elkb.html");
 
 		// for (var key in headers) {
 		// 	xhr.setRequestHeader(key, headers[key]);
