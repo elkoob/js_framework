@@ -21,7 +21,9 @@ function loadPage(pageName){
     var xhr = new XMLHttpRequest()
         xhr.onload = function () {
 
-			callback(ONLINE);
+			// callback(ONLINE);
+            app.innerHTML = xhr.response
+
 		};
 
         xhr.onerror = function () {
@@ -32,7 +34,7 @@ function loadPage(pageName){
 			callback(OFFLINE);
 		};
 
-		xhr.open('GET', "http://assets/pages/" + pageName || "500" + ".elkb.html");
+		xhr.open('GET', "assets/pages/" + pageName || "errors/500" + ".elkb.html");
 
 		// for (var key in headers) {
 		// 	xhr.setRequestHeader(key, headers[key]);
