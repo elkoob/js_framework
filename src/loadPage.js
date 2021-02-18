@@ -27,11 +27,13 @@ function loadPage(pageName){
 		};
 
         xhr.onerror = function () {
-			callback(OFFLINE);
+			app.innerHTML = xhr.response
+            loadPage(pageName)
 		};
 
 		xhr.ontimeout = function () {
-			callback(OFFLINE);
+			app.innerHTML = xhr.response
+            loadPage(pageName)
 		};
 
 		xhr.open('GET', "assets/pages/" + pageName || "errors/500" + ".elkb.html");
