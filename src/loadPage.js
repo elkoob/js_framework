@@ -17,7 +17,7 @@ if(hash == loc.hash){
 }
 }
 
-function loadPage(pageName){
+function loadPage(pageName = ""){
     var xhr = new XMLHttpRequest()
         xhr.onload = function () {
 
